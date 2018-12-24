@@ -64,7 +64,7 @@ def all_supplies_in_holidays(holiday_hash)
         if char == "_"
           holiday.to_s[i] = " "
         end
-        return holiday_name += holiday.to_s[i]
+        holiday_name += holiday.to_s[i]
       end
       puts "  #{holiday_name.capitalize}: " + v[holiday].join(", ")
     end
