@@ -67,7 +67,7 @@ def all_supplies_in_holidays(holiday_hash)
         end
         holiday_name += holiday.to_s[i]
       end
-      puts "  #{holiday_name.capitalize}: " + v.values.join(", ")
+      puts "  #{holiday_name.capitalize}: " + v[holiday].join(", ")
     end
   end
 end
