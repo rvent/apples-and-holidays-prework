@@ -59,12 +59,11 @@ def all_supplies_in_holidays(holiday_hash)
   holiday_hash.each do |k, v|
     puts "#{k.capitalize}:"
     v.keys.each do|holiday|
-      holiday_name = ""
-      holiday.to_s.each_char.with_index do |char, i|
+      holiday_name = holiday.to_s
+      holiday_name.each_char.with_index do |char, i|
         if char == "_"
-          holiday.to_s[i] = " "
+          holiday_name.to_s[i] = " "
         end
-        holiday_name += holiday.to_s[i]
       end
       puts "  #{holiday_name.capitalize}: " + v[holiday].join(", ")
     end
