@@ -63,7 +63,7 @@ def all_supplies_in_holidays(holiday_hash)
       holiday_name.each_char.with_index do |char, i|
         if char == "_"
           holiday_name[i] = " "
-          holiday_name[i+1].upcase
+          holiday_name[i+1] = holiday_name[i+1].upcase
         end
       end
       puts "  #{holiday_name}: " + v[holiday].join(", ")
