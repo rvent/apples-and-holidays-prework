@@ -60,7 +60,7 @@ def all_supplies_in_holidays(holiday_hash)
   holiday_name_reformatted = []
   holiday_hash.each do |k, v|
     puts "#{k.capitalize}:"
-    v.keys.each |holiday|
+    v.keys.each do|holiday|
       holiday.to_s.each_char.with_index do |char, i|
         if char == "_"
           holiday.to_s[i] = " "
