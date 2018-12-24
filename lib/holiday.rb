@@ -56,17 +56,18 @@ def all_supplies_in_holidays(holiday_hash)
   # Summer:
   #   Fourth Of July: Fireworks, BBQ
   # etc.
-  holiday_name_reformatted = ""
+  holiday_name = ""
+  holiday_name_reformatted = []
   holiday_hash.each do |k, v|
     puts "#{k.capitalize}:"
-    v.each do |next_k, next_v|
-      next_k.to_s.each_char.with_index do |char, i|
+    v.keys.each |holiday|
+      holiday.to_s.each_char.with_index do |char, i|
         if char == "_"
-          next_k.to_s[i] = " "
+          holiday.to_s[i] = " "
         end
-        holiday_name_reformatted += next_k.to_s[i]
+        holiday_name += holiday.to_s[i]
       end
-      puts "  #{holiday_name_reformatted.capitalize}: " + next_v.join(", ")
+      puts "  #{holiday_name.capitalize}: " + next_v.join(", ")
     end
   end
 end
